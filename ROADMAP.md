@@ -7,9 +7,15 @@ Approxmate version and targets
 
 - Integration with [gitpod-k8s](https://github.com/ssmiller25/gitpod-k8s) for Development Ease
 
+## [0.1.0]
+
+- Testing framework of some type for docker and infra code
+- CI/CD pipelines for container builds
+
 ## [1.0.0]
 
 These may probably be broken into sub-release versions
+
 
 - Leverage [tn-free](https://github.com/gruberdev/tf-free) where possible (although we are concentrating more on k8s/serverless)
 - K8S Clusters and sample apps across multiple platforms

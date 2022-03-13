@@ -3,6 +3,11 @@
 A Toolbox of utilities that can be used in a cloud-native environment.  Mostly focused on the Devops Toolchain and how
 various CNCF projects can be leveraged to address potential solutions at each step (or across steps)
 
+## Tools
+
+- [Github Starter Workflows](https://github.com/actions/starter-workflows): Good starting point in most cases
+- [act](https://github.com/nektos/act): Run github actions locally.
+
 ## Central Components
 
 - [Docker](https://www.docker.com/) - Allow for easily bundling and extracting resources to single use containers
@@ -11,8 +16,8 @@ various CNCF projects can be leveraged to address potential solutions at each st
 
 ## Debugging Tools
 
-[Netshoot](https://github.com/nicolaka/netshoot): General purpose docker container useful for a variety of network and system debugging
-[kubectl debug](https://github.com/aylei/kubectl-debug): Plugin to allow debug containers to be spun up in same namespace as pod you wish to debug.
+- [Netshoot](https://github.com/nicolaka/netshoot): General purpose docker container useful for a variety of network and system debugging
+- [kubectl debug](https://github.com/aylei/kubectl-debug): Plugin to allow debug containers to be spun up in same namespace as pod you wish to debug.
 
 ## Practice Environments
 

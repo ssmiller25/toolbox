@@ -3,6 +3,17 @@
 A Toolbox of utilities that can be used in a cloud-native environment.  Mostly focused on the Devops Toolchain and how
 various CNCF projects can be leveraged to address potential solutions at each step (or across steps)
 
+## Directory Layout
+
+- .github: Workflows to build/test all below
+- docker: Useful Docker containers and templates
+- packer: For any custom image buildes necessary
+- terraform: Primary IaC tool
+- k8s:
+    - manifests: Individual k8s "applications.  Should be "kustomize" applicable applicatons.  Helm charts should be exploded with "helm template", but with a Makefile that can be used to regenerate if necessary
+    - clusters: Example "clusters".  Kustomize of apps above
+- scripts: Collection of random scripts 
+
 ## Tools
 
 - [Github Starter Workflows](https://github.com/actions/starter-workflows): Good starting point in most cases

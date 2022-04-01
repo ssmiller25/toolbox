@@ -36,6 +36,7 @@ various CNCF projects can be leveraged to address potential solutions at each st
 - [hajimari](https://github.com/toboshii/hajimari) - start page with ingress discovery
 - [reflector](https://github.com/emberstack/kubernetes-reflector) - mirror `configmap`s or `secret`s to other Kubernetes namespaces
 - [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets)
+- [Wireguard-Go-Docker](https://github.com/masipcat/wireguard-go-docker) - Pre-built wireguard with easy k8s deployment.  [Article here](https://blog.jamesclonk.io/posts/wireguard-on-kubernetes/)
 
 ## Debugging Tools
 

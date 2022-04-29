@@ -3,6 +3,31 @@
 A Toolbox of utilities that can be used in a cloud-native environment.  Mostly focused on the Devops Toolchain and how
 various CNCF projects can be leveraged to address potential solutions at each step (or across steps)
 
+## Quickstart
+
+- **Opt:** Clone Repo
+- Click <a href="https://gitpod.io/from-referrer/">
+    <img src="https://img.shields.io/badge/Gitpod-ready--to--code-908a85?logo=gitpod" alt="Gitpod ready-to-code" />
+  </a>
+
+
+## Overall Thoughts
+
+- Bootstrap Methods
+  - gitpod
+  - local machine (vscode devcontainer optimized)
+  - GitHub actions
+- Core 
+  - kind cluster for primary bootstrap
+  - FluxCD for bootstrap deployment
+  - clusterapi for k8s cluster deployemnts (either manually applied, or via FluxCD)
+  - terraform controller https://github.com/weaveworks/tf-controller  - For other 
+  - **opt:** local git repo for flux for air-gapped - gitea.  Or maybe I assume GitHub itself is available
+- Targets
+  - k8s debugging
+  - k8s basics ... Something like bitnami production runtime, but lighter weight
+  - k8s example apps.  Apps in separate repos, but implementation here
+
 ## Directory Layout
 
 - .github: Workflows to build/test all below

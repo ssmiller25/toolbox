@@ -13,12 +13,14 @@ various CNCF projects can be leveraged to address potential solutions at each st
 
 ## Overall Thoughts
 
-- Bootstrap Methods
-  - gitpod
+- Bootstrap Methods (**Note:** kind not directly supported on Gitpod)
   - local machine (vscode devcontainer optimized)
-  - GitHub actions
-- Core 
-  - kind cluster for primary bootstrap
+  - GitHub actions directly
+  - GitHub actions through [act](https://github.com/nektos/act)
+- Pathways
+  - kubectl direct application
+    - GitPod environment
+  - k8s cluster for primary bootstrap
   - FluxCD for bootstrap deployment
   - clusterapi for k8s cluster deployemnts (either manually applied, or via FluxCD)
   - terraform controller https://github.com/weaveworks/tf-controller  - For other 

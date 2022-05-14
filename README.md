@@ -21,6 +21,8 @@ various CNCF projects can be leveraged to address potential solutions at each st
   - kubectl direct application
     - GitPod environment
   - k8s cluster for primary bootstrap
+    - TODO: Terraform for Civo bootstrap for "bootstrap" cluster    
+    - https://github.com/garutilorenzo/k3s-aws-terraform-cluster to bootstrap on AWS
   - FluxCD for bootstrap deployment
   - clusterapi for k8s cluster deployemnts (either manually applied, or via FluxCD)
   - terraform controller https://github.com/weaveworks/tf-controller  - For other 

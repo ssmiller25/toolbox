@@ -11,12 +11,45 @@ various CNCF projects can be leveraged to address potential solutions at each st
   </a>
 
 
-## Overall Thoughts
+## User Story:
 
-- Bootstrap Methods (**Note:** kind not directly supported on Gitpod)
-  - local machine (vscode devcontainer optimized)
-  - GitHub actions directly
+- As a DevOps Engineer, quickly bring up a Kubernetes CLI/GUI app that can be run from anywhere (vscode-server with a kubectl/kustomize/helm baked in)
+- As a DevOps Engineer, I need a quick "reference" for common configurations.  Should be installed relatively quickly - leveraging either the operator framework, Helm Charts, or kustomize/kubectl as necessary.
+  - Quick debugging
+    - Spin up a variety of debugging pods (network tools, eBPL based toosl, etc)
+  - Common references for essential utilities in most K8S clusters (like [BKPR](https://github.com/vmware-archive/kube-prod-runtime), but...modern-ish)
+    - [Operator Lifecycle Manager](https://olm.operatorframework.io/) - only selectivily for complex reosureces
+    - Monitoring Stack
+      - Promtheus Operator (Metrics) (include alerts)
+      - Loki (Plain YAML or Helm?)
+      - Grafana (Metrics/Logs) 
+      - Pixie Operator (Tracing/Network)
+    - Ingress Stack
+      - Nginx Ingress Controller
+      - Cert-Manager
+      - Oauth2 Proxy
+      - External DNS
+    - Security Stack
+      - Runtime Security: Falco
+      - Configuration: Kubebench, kubehunter, 
+      - Live Container Scanning: [Kube-scan](https://github.com/octarinesec/kube-scan)
+- As a DevOps Engineer, need a platform to quickly test out new configuration changes:
+  - Spin up clusters easily on a variety of platform (Managed K8S or k3s on IaaS )
+
+
+## Overall Thoughts/Notes
+
+- Bootstrap Methods (**Note:** ways to "bootstrap" a cluster that has a web interface for management)
+  - local machine (vscode devcontainer optimized) - leverages k3d/k3s locally
+  - GitHub actions directly - Initialize 
   - GitHub actions through [act](https://github.com/nektos/act)
+  - Initial cluster: fairly minimal:
+    - Web Interface
+    - External Secrets 
+    - Flux?
+    - tf-controller that can spin up additional resources
+    - Cluster-API?
+    - 
 - Pathways
   - kubectl direct application
     - GitPod environment

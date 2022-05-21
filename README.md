@@ -36,7 +36,6 @@ various CNCF projects can be leveraged to address potential solutions at each st
 - As a DevOps Engineer, need a platform to quickly test out new configuration changes:
   - Spin up clusters easily on a variety of platform (Managed K8S or k3s on IaaS )
 
-
 ## Overall Thoughts/Notes
 
 - Bootstrap Methods (**Note:** ways to "bootstrap" a cluster that has a web interface for management)
@@ -73,6 +72,7 @@ various CNCF projects can be leveraged to address potential solutions at each st
 - terraform: Primary IaC tool
 - k8s:
     - manifests: Individual k8s "applications.  Should be "kustomize" applicable applicatons.  Helm charts should be exploded with "helm template", but with a Makefile that can be used to regenerate if necessary
+      - **Might** allow use of [FluxCD Helm Controller](https://fluxcd.io/docs/components/helm/) to speed deployment of more complex packages.
     - clusters: Example "clusters".  Kustomize of apps above
 - scripts: Collection of random scripts 
 
@@ -112,3 +112,4 @@ Always good to have an example "app" to practice deployments and debugging.
 - [Java Based: Java Shopping](https://github.com/danielbryantuk/oreilly-docker-java-shopping)
 - [Python/Java Based: Bank of Anthos](https://github.com/GoogleCloudPlatform/bank-of-anthos) - also against a PostgreSQL database.  Primarily REST based called between services.
 - [Polygot: Online Boutique](https://github.com/GoogleCloudPlatform/microservices-demo) - True Polygot Application, with Microservices written in Python, Go, C#, Java and Node.  Primarily gRPC calls between services.
+- [Tilt: Avatars](https://github.com/tilt-dev/tilt-avatars): For testing with Tilt - Python backend/SPA frontend

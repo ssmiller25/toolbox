@@ -17,7 +17,7 @@ various CNCF projects can be leveraged to address potential solutions at each st
 - As a DevOps Engineer, I need a quick "reference" for common configurations.  Should be installed relatively quickly - leveraging either the operator framework, Helm Charts, or kustomize/kubectl as necessary.
   - Quick debugging
     - Spin up a variety of debugging pods (network tools, eBPL based toosl, etc)
-  - Common references for essential utilities in most K8S clusters (like [BKPR](https://github.com/vmware-archive/kube-prod-runtime), but...modern-ish)
+  - Common references for essential utilities in most K8S clusters (like [BKPR](https://github.com/vmware-archive/kube-prod-runtime), but...modern-ish) (or also like [Digital Ocean's Starter Kit](https://github.com/digitalocean/Kubernetes-Starter-Kit-Developers)
     - [Operator Lifecycle Manager](https://olm.operatorframework.io/) - only selectivily for complex reosureces
     - Monitoring Stack
       - Promtheus Operator (Metrics) (include alerts)
@@ -30,9 +30,17 @@ various CNCF projects can be leveraged to address potential solutions at each st
       - Oauth2 Proxy
       - External DNS
     - Security Stack
+      - [Sealed Secretes](https://github.com/bitnami-labs/sealed-secrets) - Feels the most native k8s way to do secrets without being tied to a specific backend (such as with the External Secrets operator)
       - Runtime Security: Falco
       - Configuration: Kubebench, kubehunter, 
       - Live Container Scanning: [Kube-scan](https://github.com/octarinesec/kube-scan)
+    - Scaling (HPA, VPA, Cluster Auto-Scaler)
+    - GitOps - FluxCD.  Prefer Flux's handing of Helm charts versus ArgoCD (the other major competitor).  Although Argo might make doing kustomize patches after a helm chart application a bit easier...
+      - Although honestly, if a Helm chart isn't htat flexible, just leverage `helm template` to render the raw yaml, and massage with kustomize.   
+    - Backup/Restore
+      - Should MOSTLY be in the gitops repo, but a nice second layer in some circumstances
+      - Useful for Sealed Secrets, as well as anything in PVs
+      - Velero for the most part
 - As a DevOps Engineer, need a platform to quickly test out new configuration changes:
   - Spin up clusters easily on a variety of platform (Managed K8S or k3s on IaaS )
 

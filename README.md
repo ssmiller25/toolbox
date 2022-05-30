@@ -31,9 +31,15 @@ various CNCF projects can be leveraged to address potential solutions at each st
       - External DNS
     - Security Stack
       - [Sealed Secretes](https://github.com/bitnami-labs/sealed-secrets) - Feels the most native k8s way to do secrets without being tied to a specific backend (such as with the External Secrets operator)
-      - Runtime Security: Falco
-      - Configuration: Kubebench, kubehunter, 
-      - Live Container Scanning: [Kube-scan](https://github.com/octarinesec/kube-scan)
+      - Security Operator (All in One): Aqua's [Starboard](https://aquasecurity.github.io/starboard)
+        - Trivy Scanner for COntiner Scanning
+        - Configuration audit via built-in polcies (rego written)
+        - Node Configuration audit via kube-bench
+        - Automated Pen Testing for kube-hunter
+      - Individual Tools
+        - Runtime Security: Falco
+        - Configuration: Kubebench, kubehunter
+        - Live Container Scanning: [Kube-scan](https://github.com/octarinesec/kube-scan)
     - Scaling (HPA, VPA, Cluster Auto-Scaler)
     - GitOps - FluxCD.  Prefer Flux's handing of Helm charts versus ArgoCD (the other major competitor).  Although Argo might make doing kustomize patches after a helm chart application a bit easier...
       - Although honestly, if a Helm chart isn't htat flexible, just leverage `helm template` to render the raw yaml, and massage with kustomize.   

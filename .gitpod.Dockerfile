@@ -2,4 +2,5 @@
 FROM gitpod/workspace-full:2022-06-20-19-54-55
 
 # Install custom tools, runtime, etc.
-RUN brew install act
+RUN brew tap civo/tools && \
+    brew install act terraform civo awscli

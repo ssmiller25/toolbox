@@ -1,6 +1,6 @@
 
 
-# Use size g4s.kube.large , hard coded
+# Use size g4s.kube.large , hard coded (4CPU, 8GB RAM)
 
 # Create a firewall
 resource "civo_firewall" "diskbench-firewall" {

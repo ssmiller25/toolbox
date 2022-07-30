@@ -9,7 +9,14 @@ various CNCF projects can be leveraged to address potential solutions at each st
 - Click <a href="https://gitpod.io/from-referrer/">
     <img src="https://img.shields.io/badge/Gitpod-ready--to--code-908a85?logo=gitpod" alt="Gitpod ready-to-code" />
   </a>
-
+- Set the following environment variables for various cloud environments
+  - Civo
+    - CIVO_API_KEY
+    - Will also have to run `civo apikey save --load-from-env` to save to local config
+  - Amazon
+    - AWS_REGION
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
 
 ## User Story:
 

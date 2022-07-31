@@ -5,3 +5,20 @@ image:
 #      echo 'TODO: build project'
 #    command: |
 #      echo 'TODO: start app'
+
+tasks:
+  - name: Bootstrap civo
+    init: |
+      brew tap civo/tools
+      brew install civo
+    command: |
+      civo apikey save civokey ${CIVO_TOKEN} || true
+  - name: Install Terraform
+    init: |
+      brew install terraform
+  - name: Install awscli
+    init: |
+      brew install awscli
+  - name: Install kubernetes utilities
+    init: |
+      brew install kubernetes-cli helm

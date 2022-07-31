@@ -1,0 +1,4 @@
+2022-07-31T16:41:57.373Z	INFO	agentlog/agentlog.go:23	Initialized logger
+2022-07-31T16:41:57.374Z	INFO	kubeagent/main.go:1950	Logger initialised
+2022-07-31T16:41:57.428Z	INFO	kubeagent/main.go:2007	Waiting for KAM to connect to KubeAgent
+2022-07-31T16:41:57.429Z	INFO	kubeagent/main.go:1827	Listening and waiting to server gRPC requests	{"addr": ":50061"}

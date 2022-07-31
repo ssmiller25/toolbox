@@ -1,0 +1,76 @@
+2022-07-31T16:41:36.052Z	INFO	agentlog/agentlog.go:23	Initialized logger
+2022-07-31T16:41:36.053Z	INFO	kubeagentmanager/main.go:616	Initialized the logger
+2022-07-31T16:41:36.053Z	INFO	kubeagentmanager/main.go:625	Cluster identified	{"ID": "62e6b0a33d81e1f89c34e57d"}
+2022-07-31T16:41:36.053Z	INFO	kubeagentmanager/main.go:633	Deployment Platform identified	{"Platform": "yaml"}
+2022-07-31T16:41:36.054Z	INFO	kubeagentmanager/main.go:646	Initialized Kubernetes client
+2022-07-31T16:41:36.054Z	INFO	kubeagentmanager/main.go:649	Checking for KubeAgent Deployment Updates at the beginning...
+2022-07-31T16:41:36.054Z	INFO	kubeagentmanager/main.go:113	checkforKubeAgentDeploymentUpdates(): Checking for updates to kubeagent deployment	{"Current KubeAgent Manager Version": "1.3"}
+2022-07-31T16:41:36.081Z	INFO	utils/utils.go:282	connectToKas(): Inside this function
+2022-07-31T16:41:36.081Z	INFO	utils/utils.go:291	connectToKas(): Dialing KAS for TLS as true	{"Server Address": "agent.cloudcasa.io:443"}
+2022-07-31T16:41:36.215Z	INFO	utils/utils.go:307	connectToKas(): Connected to KAS
+2022-07-31T16:41:36.215Z	INFO	utils/utils.go:311	connectToKas(): Returning from this function
+2022-07-31T16:41:36.479Z	INFO	kubeagentmanager/main.go:222	connectToKasForCheckingUpdates(): No updates to KAM. Checking if KA updates are available
+2022-07-31T16:41:36.480Z	INFO	kubeagentmanager/main.go:229	connectToKasForCheckingUpdates(): Received new Kube Agent updates	{"Resource List": 19}
+2022-07-31T16:41:36.480Z	INFO	kubeagentmanager/main.go:234	connectToKasForCheckingUpdates(): Waiting for KubeAgent to be ready for updates
+2022-07-31T16:41:36.480Z	INFO	kubeagentmanager/main.go:242	connectToKasForCheckingUpdates(): KubeAgent is ready for update
+2022-07-31T16:41:36.480Z	INFO	kubeagentmanager/main.go:359	Inside closeGRPCconnections()
+2022-07-31T16:41:36.480Z	INFO	kubeagentmanager/main.go:364	closeGRPCconnections(): Closing connection to KAS
+2022-07-31T16:41:36.480Z	INFO	kubeagentmanager/main.go:379	closeGRPCconnections(): KA connection is nil
+2022-07-31T16:41:36.480Z	INFO	kubeagentmanager/main.go:382	closeGRPCconnections(): returning from this function
+2022-07-31T16:41:36.480Z	INFO	deploy/deploy.go:247	Received resources from KAS to Deploy	{"Number": 19}
+2022-07-31T16:41:36.480Z	INFO	utils/utils.go:282	connectToKas(): Inside this function
+2022-07-31T16:41:36.480Z	INFO	utils/utils.go:291	connectToKas(): Dialing KAS for TLS as true	{"Server Address": "agent.cloudcasa.io:443"}
+2022-07-31T16:41:36.529Z	INFO	utils/utils.go:307	connectToKas(): Connected to KAS
+2022-07-31T16:41:36.529Z	INFO	utils/utils.go:311	connectToKas(): Returning from this function
+2022-07-31T16:41:37.124Z	INFO	deploy/deploy.go:265	Resource	{"Number": 1, "Name": "volumesnapshotclasses.snapshot.storage.k8s.io", "Namespace": "", "Group": "apiextensions.k8s.io", "Version": "v1", "Kind": "CustomResourceDefinition", "Hash": "J0P4eB9I40YJpzMu-5vXkFHzpu2q4AtFdwREz1ZVs_CQJQDDrx65BjKxUSO6FDTXwx3nrfLw8EM-pVd9LAQN1g==", "Action": "ADD", "Length of Manifest": 4831}
+2022-07-31T16:41:37.341Z	INFO	deploy/deploy.go:265	Resource	{"Number": 2, "Name": "volumesnapshotcontents.snapshot.storage.k8s.io", "Namespace": "", "Group": "apiextensions.k8s.io", "Version": "v1", "Kind": "CustomResourceDefinition", "Hash": "Lry58heXkjyk25fsEmpcAY5kQpQfL1_bZcHxG9DRIWaAU12ByQjFikxEYxwjEOOswmIxHAw79GfzPry0AJqOng==", "Action": "ADD", "Length of Manifest": 19292}
+2022-07-31T16:41:37.534Z	INFO	deploy/deploy.go:265	Resource	{"Number": 3, "Name": "volumesnapshots.snapshot.storage.k8s.io", "Namespace": "", "Group": "apiextensions.k8s.io", "Version": "v1", "Kind": "CustomResourceDefinition", "Hash": "QDQNdkEu98F6Ecal5gqmgK459owwzDOh-y7-7Q5JH_EIAtUopVwTKwKrK2nt6GuOAC91g4EKGTYpr2gW4Em63Q==", "Action": "ADD", "Length of Manifest": 16243}
+2022-07-31T16:41:37.719Z	INFO	deploy/deploy.go:265	Resource	{"Number": 4, "Name": "cloudcasa-io", "Namespace": "", "Group": "", "Version": "v1", "Kind": "Namespace", "Hash": "fIMHEE8PM7HdzIdXg6_aCxGEkUUb0AxMOXuDkVjp1i5uzZSQOWOKnZ9K0GgeOUQQZBh6N6wrFALVoESJrg2IUw==", "Action": "ADD", "Length of Manifest": 76}
+2022-07-31T16:41:37.936Z	INFO	deploy/deploy.go:265	Resource	{"Number": 5, "Name": "cloudcasa-io", "Namespace": "cloudcasa-io", "Group": "", "Version": "v1", "Kind": "ServiceAccount", "Hash": "UcYesvjjg9RxnQpad1Q1H2e_Vlnx3oPQy6iJLq2vO7kzJ6TVXm6_QlMs1Ri-jMY0oCDbKTbXCWs6RJVMn5klMA==", "Action": "ADD", "Length of Manifest": 82}
+2022-07-31T16:41:38.153Z	INFO	deploy/deploy.go:265	Resource	{"Number": 6, "Name": "cloudcasa-io", "Namespace": "", "Group": "rbac.authorization.k8s.io", "Version": "v1", "Kind": "ClusterRoleBinding", "Hash": "_egW2gu36w6Da0ANPEtxU9q2jBbFu87h2y4vnAN58EHbEpBASVHJxwwM4-X7iZXIfV-ce-sH8uezhZd8l8fIHQ==", "Action": "ADD", "Length of Manifest": 175}
+2022-07-31T16:41:38.337Z	INFO	deploy/deploy.go:265	Resource	{"Number": 7, "Name": "kubeagent", "Namespace": "cloudcasa-io", "Group": "apps", "Version": "v1", "Kind": "Deployment", "Hash": "lbLk-sdQyfUvRWpfg9I0NlvNRhzCMN9Kl23VUzWobZVwH_SAF2l-Q9ES6cjivyc2gNE7e3OpV0G3cti3bANOCw==", "Action": "ADD", "Length of Manifest": 2394}
+2022-07-31T16:41:38.524Z	INFO	deploy/deploy.go:265	Resource	{"Number": 8, "Name": "kubeagent", "Namespace": "cloudcasa-io", "Group": "", "Version": "v1", "Kind": "Service", "Hash": "3bD4Ma0B0a5FunsEvN-J4D6U7wTMQ5X1LhZOTjQUwbEvYvkbOP60xlXgY0OkQfhA6JP88Tf41TEMbbxeYp6vNg==", "Action": "ADD", "Length of Manifest": 244}
+2022-07-31T16:41:38.802Z	INFO	deploy/deployDynamicResources.go:89	Created dynamic Resource Object cloudcasa-io/kubeagent. Gvk: /v1, Kind=Service
+2022-07-31T16:41:38.961Z	INFO	deploy/deploy.go:265	Resource	{"Number": 9, "Name": "backups.velero.io", "Namespace": "", "Group": "apiextensions.k8s.io", "Version": "v1", "Kind": "CustomResourceDefinition", "Hash": "LfWv5iq5w7V-1RKxKoHWyBxVVUky_Hhcg8cwBZrN9d0Qmisn1YS_zDDBjslgcGDx7VriOKF70lIKwzS7LwQ5xA==", "Action": "ADD", "Length of Manifest": 13036}
+2022-07-31T16:41:39.798Z	INFO	deploy/deploy.go:265	Resource	{"Number": 10, "Name": "backupstoragelocations.velero.io", "Namespace": "", "Group": "apiextensions.k8s.io", "Version": "v1", "Kind": "CustomResourceDefinition", "Hash": "hEVTa-q6_0IBVrZC8XcicQb2rAYiQ4S4d2rdAQAlFHw7DQ_68ANW_S8uqOlYbyi1R07HNJniSdXL6DRCjmUTfA==", "Action": "ADD", "Length of Manifest": 4814}
+2022-07-31T16:41:40.583Z	INFO	deploy/deploy.go:265	Resource	{"Number": 11, "Name": "deletebackuprequests.velero.io", "Namespace": "", "Group": "apiextensions.k8s.io", "Version": "v1", "Kind": "CustomResourceDefinition", "Hash": "oI0hfsjnAYD32MTnRv85Och_sn272e0xZ_8m4Sq28_7e2owm4W-lbi0_0MZ4g0QOxUj6pbLh61kGTzz70RtF0w==", "Action": "ADD", "Length of Manifest": 1750}
+2022-07-31T16:41:41.420Z	INFO	deploy/deploy.go:265	Resource	{"Number": 12, "Name": "downloadrequests.velero.io", "Namespace": "", "Group": "apiextensions.k8s.io", "Version": "v1", "Kind": "CustomResourceDefinition", "Hash": "VqBHRBRlXNx7ASSZ9BhYATO7gKFUFPVo_bqvsr4dmetAYSoWOMqqqbkKm8QRKZaT22IRWishnrd6KFh0rDuTnw==", "Action": "ADD", "Length of Manifest": 2253}
+2022-07-31T16:41:41.773Z	INFO	deploy/deploy.go:265	Resource	{"Number": 13, "Name": "podvolumebackups.velero.io", "Namespace": "", "Group": "apiextensions.k8s.io", "Version": "v1", "Kind": "CustomResourceDefinition", "Hash": "rHmjyWiecphqL2EV1JUNzfvBtYpR6CX1WJCsTSCCzFyx-fOgEETrp2FjqQpa7NVM9Eh8VI-wHDDaDn9G7MwMQg==", "Action": "ADD", "Length of Manifest": 5202}
+2022-07-31T16:41:42.698Z	INFO	deploy/deploy.go:265	Resource	{"Number": 14, "Name": "podvolumerestores.velero.io", "Namespace": "", "Group": "apiextensions.k8s.io", "Version": "v1", "Kind": "CustomResourceDefinition", "Hash": "VbfztNzY_GjYYtIU7mCSvaD-nneRNc6jhoQ0ZgX0SXAraZDa2hPMYQ4SOCFTs1unzoP7KOuvZLmuMNHX-MJc_g==", "Action": "ADD", "Length of Manifest": 4689}
+2022-07-31T16:41:43.495Z	INFO	deploy/deploy.go:265	Resource	{"Number": 15, "Name": "resticrepositories.velero.io", "Namespace": "", "Group": "apiextensions.k8s.io", "Version": "v1", "Kind": "CustomResourceDefinition", "Hash": "tSqRhA0mKvcnSES-VGTC4KGc-sk9IHcPJah03caLQ-6Ee3fdR-LMzl5RiekehzjE2AyLcHwQS_Uz1LG5s3Xclg==", "Action": "ADD", "Length of Manifest": 2329}
+2022-07-31T16:41:44.262Z	INFO	deploy/deploy.go:265	Resource	{"Number": 16, "Name": "restores.velero.io", "Namespace": "", "Group": "apiextensions.k8s.io", "Version": "v1", "Kind": "CustomResourceDefinition", "Hash": "sXdsjjRGMqT1ZXsQIvmiDwy4c_EZU-GlHbkbX86dKvZ_ZTSBGWZY7FJsKKe28QQ1mfZ60m27puVYWMJ-cczhGQ==", "Action": "ADD", "Length of Manifest": 50780}
+2022-07-31T16:41:45.540Z	INFO	deploy/deploy.go:265	Resource	{"Number": 17, "Name": "schedules.velero.io", "Namespace": "", "Group": "apiextensions.k8s.io", "Version": "v1", "Kind": "CustomResourceDefinition", "Hash": "ZlnxGbiJPd2LFxUe2vBukKV_k88Xl3ZyAA-izlDQry_Z-kq3oYKmDCXwaLAlhtFbE6ITFeWYaHVMlWu7gbGj-g==", "Action": "ADD", "Length of Manifest": 11039}
+2022-07-31T16:41:46.365Z	INFO	deploy/deploy.go:265	Resource	{"Number": 18, "Name": "serverstatusrequests.velero.io", "Namespace": "", "Group": "apiextensions.k8s.io", "Version": "v1", "Kind": "CustomResourceDefinition", "Hash": "QNEEoGGYWv0qHg05Qjlg2nJqTdoZxL__EU4htN4vxGih3RU5ZAf_jP7G6MZwjkNagbUXm-t6YGVuHPZH8dE63A==", "Action": "ADD", "Length of Manifest": 2139}
+2022-07-31T16:41:47.184Z	INFO	deploy/deploy.go:265	Resource	{"Number": 19, "Name": "volumesnapshotlocations.velero.io", "Namespace": "", "Group": "apiextensions.k8s.io", "Version": "v1", "Kind": "CustomResourceDefinition", "Hash": "KdmeUIBSqmKuDx6GpHW7A3xV9HSCscpMguJ4syC_I0vfpOm1DARxMuPBHQ48sPjuWXHuQ4E2pf9s0sY3635dXg==", "Action": "ADD", "Length of Manifest": 1857}
+2022-07-31T16:41:47.939Z	INFO	utils/utils.go:112	Updating KAM ConfigMap
+2022-07-31T16:41:47.939Z	INFO	utils/utils.go:114	updateKubeAgentManagerConfigMap(): Resource List is nil
+2022-07-31T16:41:47.957Z	INFO	utils/utils.go:145	updateKubeAgentManagerConfigMap(): Created configmap realted to KAM	{"Name": "cloudcasa-kubeagent-manager"}
+2022-07-31T16:41:48.129Z	INFO	kubeagentmanager/main.go:250	connectToKasForCheckingUpdates(): Finished deploying kubeagent updates
+2022-07-31T16:41:48.129Z	INFO	kubeagentmanager/main.go:127	checkforKubeAgentDeploymentUpdates(): Finished checking for deployment updates.
+2022-07-31T16:41:48.129Z	INFO	kubeagentmanager/main.go:653	Starting Go routine to check for KubeAgentHealth
+2022-07-31T16:41:48.129Z	INFO	kubeagentmanager/main.go:661	Started Ticker for periodic check of KubeAgent Deployment...	{"Interval": "24h0m0s"}
+2022-07-31T16:41:48.129Z	INFO	kubeagentmanager/main.go:667	main(): Waiting For KubeAgent to be started
+2022-07-31T16:41:48.129Z	INFO	kubeagentmanager/main.go:99	startPeriodicCheckForKubeagentUpdates(): Started periodic check for agent updates
+2022-07-31T16:41:48.129Z	INFO	kubeagentmanager/main.go:385	checkKubeAgentHealth(): Started Go routine to check for KubeAgentHealth
+2022-07-31T16:41:48.129Z	INFO	utils/utils.go:371	connectToKa(): Inside this function
+2022-07-31T16:41:48.129Z	INFO	utils/utils.go:375	ConnectToKa(): Waiting to get KA gRPC server address
+2022-07-31T16:41:48.129Z	INFO	utils/utils.go:316	getKAserverAddress(): Will wait to find KA gRPC server address
+2022-07-31T16:41:48.137Z	INFO	utils/utils.go:348	getKAserverAddress(): Endpoint for KA found, but, IP address and port not yet bound	{"Retrying...": "1s"}
+2022-07-31T16:41:49.153Z	INFO	utils/utils.go:348	getKAserverAddress(): Endpoint for KA found, but, IP address and port not yet bound	{"Retrying...": "1s"}
+2022-07-31T16:41:50.163Z	INFO	utils/utils.go:348	getKAserverAddress(): Endpoint for KA found, but, IP address and port not yet bound	{"Retrying...": "1s"}
+2022-07-31T16:41:51.174Z	INFO	utils/utils.go:348	getKAserverAddress(): Endpoint for KA found, but, IP address and port not yet bound	{"Retrying...": "1s"}
+2022-07-31T16:41:52.182Z	INFO	utils/utils.go:348	getKAserverAddress(): Endpoint for KA found, but, IP address and port not yet bound	{"Retrying...": "1s"}
+2022-07-31T16:41:53.195Z	INFO	utils/utils.go:348	getKAserverAddress(): Endpoint for KA found, but, IP address and port not yet bound	{"Retrying...": "1s"}
+2022-07-31T16:41:54.203Z	INFO	utils/utils.go:348	getKAserverAddress(): Endpoint for KA found, but, IP address and port not yet bound	{"Retrying...": "1s"}
+2022-07-31T16:41:55.210Z	INFO	utils/utils.go:348	getKAserverAddress(): Endpoint for KA found, but, IP address and port not yet bound	{"Retrying...": "1s"}
+2022-07-31T16:41:56.223Z	INFO	utils/utils.go:348	getKAserverAddress(): Endpoint for KA found, but, IP address and port not yet bound	{"Retrying...": "1s"}
+2022-07-31T16:41:57.233Z	INFO	utils/utils.go:348	getKAserverAddress(): Endpoint for KA found, but, IP address and port not yet bound	{"Retrying...": "1s"}
+2022-07-31T16:41:58.242Z	INFO	utils/utils.go:348	getKAserverAddress(): Endpoint for KA found, but, IP address and port not yet bound	{"Retrying...": "1s"}
+2022-07-31T16:41:59.251Z	INFO	utils/utils.go:348	getKAserverAddress(): Endpoint for KA found, but, IP address and port not yet bound	{"Retrying...": "1s"}
+2022-07-31T16:42:00.260Z	INFO	utils/utils.go:348	getKAserverAddress(): Endpoint for KA found, but, IP address and port not yet bound	{"Retrying...": "1s"}
+2022-07-31T16:42:01.271Z	INFO	utils/utils.go:348	getKAserverAddress(): Endpoint for KA found, but, IP address and port not yet bound	{"Retrying...": "1s"}
+2022-07-31T16:42:02.278Z	INFO	utils/utils.go:337	getKAserverAddress(): Endpoint for KA gRPC server address found
+2022-07-31T16:42:02.278Z	INFO	utils/utils.go:354	getKAserverAddress(): Waiting to get KA service in order to get the clusterIP of KA gRPC server
+2022-07-31T16:42:02.285Z	INFO	utils/utils.go:364	getKAserverAddress(): Found clusterIP of KA gRPC server	{"Server Address": "172.20.47.45:50061"}
+2022-07-31T16:42:02.285Z	INFO	utils/utils.go:377	ConnectToKa(): Got KA gRPC server address	{"Server Address": "172.20.47.45:50061"}
+2022-07-31T16:42:02.285Z	INFO	utils/utils.go:382	ConnectToKa(): Dialing KA for TLS as false	{"Server Address": "172.20.47.45:50061"}

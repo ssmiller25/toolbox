@@ -20,8 +20,7 @@ module "eks" {
   cluster_version = "1.22"
 
   vpc_id     = module.vpc.vpc_id
-  subnet_ids = module.vpc.private_subnets
-
+  subnet_ids = module.vpc.public_subnets
   eks_managed_node_groups = {
     mainpool = {
       min_size     = 1
@@ -52,13 +51,13 @@ module "vpc" {
   public_subnet_ipv6_prefixes  = [0, 1, 2]
   private_subnet_ipv6_prefixes = [3, 4, 5]
 
-  enable_nat_gateway   = true
-  single_nat_gateway   = true
+  enable_nat_gateway   = false
+  single_nat_gateway   = false
   enable_dns_hostnames = true
 
-  enable_flow_log                      = true
-  create_flow_log_cloudwatch_iam_role  = true
-  create_flow_log_cloudwatch_log_group = true
+  enable_flow_log                      = false
+  create_flow_log_cloudwatch_iam_role  = false
+  create_flow_log_cloudwatch_log_group = false
 
   public_subnet_tags = {
     "kubernetes.io/cluster/${local.name}" = "shared"

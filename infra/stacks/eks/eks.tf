@@ -16,17 +16,28 @@ module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "~> 18.0"
 
-  cluster_name    = "diskbench-aws"
+  cluster_name    = "eks-20220802"
   cluster_version = "1.22"
 
   vpc_id     = module.vpc.vpc_id
   subnet_ids = module.vpc.public_subnets
+
+  cluster_addons = {
+    coredns = {
+      resolve_conflicts = "OVERWRITE"
+    }
+    vpc-cni = {
+      resolve_conflicts        = "OVERWRITE"
+      service_account_role_arn = module.vpc_cni_irsa.iam_role_arn
+    }
+  }
+
   eks_managed_node_groups = {
     mainpool = {
       min_size     = 1
       max_size     = 3
       desired_size = 3
-      instance_types = ["t3.small"]
+      instance_types = ["t3.large"]
       capacity_type  = "SPOT"
     }
   }
@@ -70,4 +81,34 @@ module "vpc" {
   }
 
   tags = local.tags
+}
+
+module "vpc_cni_irsa_role" {
+  source    = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks"
+
+  role_name = "vpc-cni"
+
+  attach_vpc_cni_policy = true
+  vpc_cni_enable_ipv4   = true
+
+  oidc_providers = {
+    main = {
+      provider_arn               = module.eks.oidc_provider_arn
+      namespace_service_accounts = ["default:vpc"]
+    }
+  }
+}
+
+module "external_dns_irsa_role" {
+  source    = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks"
+
+  role_name = "external-dns"
+  attach_external_dns_policy = true
+
+  oidc_providers = {
+    main = {
+      provider_arn               = module.eks.oidc_provider_arn
+      namespace_service_accounts = ["default:vpc"]
+    }
+  }
 }

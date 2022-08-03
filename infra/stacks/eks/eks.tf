@@ -16,21 +16,25 @@ module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "~> 18.0"
 
-  cluster_name    = "eks-20220802"
+  cluster_name    = "eks-20220802-2"
   cluster_version = "1.22"
 
   vpc_id     = module.vpc.vpc_id
   subnet_ids = module.vpc.public_subnets
 
+  
   cluster_addons = {
     coredns = {
       resolve_conflicts = "OVERWRITE"
     }
+    /*
     vpc-cni = {
       resolve_conflicts        = "OVERWRITE"
       service_account_role_arn = module.vpc_cni_irsa.iam_role_arn
     }
+    */
   }
+  
 
   eks_managed_node_groups = {
     mainpool = {
@@ -82,7 +86,7 @@ module "vpc" {
 
   tags = local.tags
 }
-
+/*
 module "vpc_cni_irsa" {
   source    = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks"
 
@@ -112,3 +116,5 @@ module "external_dns_irsa_role" {
     }
   }
 }
+
+*/

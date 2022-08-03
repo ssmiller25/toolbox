@@ -1,0 +1,85 @@
+apiVersion: v1
+kind: List
+# This list contains Cloudcasa Agent Manager and RBAC resources 
+# required to deploy the Cloudcasa Kube Agent
+items:
+- apiVersion: v1
+  kind: Namespace
+  metadata:
+    creationTimestamp: null
+    labels:
+      component: kubeagent-backup-helper
+    name: cloudcasa-io
+  spec: {}
+- apiVersion: v1
+  kind: ServiceAccount
+  metadata:
+    creationTimestamp: null
+    labels:
+      component: kubeagent-backup-helper
+    name: cloudcasa-io
+    namespace: cloudcasa-io
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: ClusterRoleBinding
+  metadata:
+    creationTimestamp: null
+    labels:
+      component: kubeagent-backup-helper
+    name: cloudcasa-io
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: cluster-admin
+  subjects:
+  - kind: ServiceAccount
+    name: cloudcasa-io
+    namespace: cloudcasa-io
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: cloudcasa-kubeagent-manager
+    namespace: cloudcasa-io
+    labels:
+      component: cloudcasa-kubeagent-manager
+  spec:
+    selector:
+      matchLabels:
+        app: cloudcasa-kubeagent-manager
+    strategy: {}
+    replicas: 1
+    template:
+      metadata:
+        labels:
+          app: cloudcasa-kubeagent-manager
+      spec:
+        containers:
+        - image: catalogicsoftware/amds-kagent:3.1.0-prod.155
+          args: ["/usr/local/bin/kubeagentmanager", "--server_addr", "agent.cloudcasa.io:443", "--tls", "true"]
+          name: kubeagentmanager
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          volumeMounts:          
+          - mountPath: /scratch
+            name: scratch          
+          env:
+          - name: MY_POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: AMDS_CLUSTER_ID
+            value: 62e9cc7676b9313c5d9c96e6
+          - name: KUBEMOVER_IMAGE
+            value: catalogicsoftware/amds-kagent:3.1.0-prod.155
+          - name: DEPLOYMENT_PLATFORM
+            value: "yaml"
+        restartPolicy: Always
+        serviceAccountName: cloudcasa-io
+        volumes:        
+        - emptyDir: {}
+          name: scratch
+---

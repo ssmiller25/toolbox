@@ -83,7 +83,7 @@ module "vpc" {
   tags = local.tags
 }
 
-module "vpc_cni_irsa_role" {
+module "vpc_cni_irsa" {
   source    = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks"
 
   role_name = "vpc-cni"

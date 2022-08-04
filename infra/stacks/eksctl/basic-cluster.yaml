@@ -1,0 +1,13 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: toolbox-eksctl
+  region: us-east-2
+nodeGroups:
+  - name: ng-1
+    instanceType: t3.large
+    desiredCapacity: 3
+    volumeSize: 50
+    ssh:
+      allow: false # will use ~/.ssh/id_rsa.pub as the default ssh key

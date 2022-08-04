@@ -20,6 +20,10 @@ plan:
 apply:
 	$(DOCKER_CMD) apply	
 
+.PHONY:destroy
+destroy:
+	$(DOCKER_CMD) destroy
+
 .PHONY:apply-refresh
 apply-refresh:
 	$(DOCKER_CMD) apply -refresh-only

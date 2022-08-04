@@ -4,11 +4,14 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 4.0"
     }
+    civo = {
+      source = "civo/civo"
+    }
   }
 
   backend "s3" {
     bucket = "terraform-r15cookie"
-    key    = "stacks/eks"
+    key    = "stacks/civo"
     dynamodb_table = "terraform-r15cookie"
     region = "us-east-2"
   }
@@ -17,4 +20,8 @@ terraform {
 
 provider "aws" {
 
+}
+
+provider "civo" {
+  region = "NYC1"
 }

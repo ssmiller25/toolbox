@@ -1,7 +1,6 @@
-# Cloud Native Toolbox
+# Steve Miller's Toolbox
 
-A Toolbox of utilities that can be used in a cloud-native environment.  Mostly focused on the Devops Toolchain and how
-various CNCF projects can be leveraged to address potential solutions at each step (or across steps)
+A variety of tools and configurations that I find useful.  Most follow a Unix phylosophy of small, relatively independent tools that can be applied quickly.
 
 ## Directory Layout
 
@@ -10,8 +9,8 @@ various CNCF projects can be leveraged to address potential solutions at each st
 - packer: For any custom image buildes necessary
 - terraform: Primary IaC tool
 - k8s:
-    - manifests: Individual k8s "applications.  Should be "kustomize" applicable applicatons.  Helm charts should be exploded with "helm template", but with a Makefile that can be used to regenerate if necessary
-    - clusters: Example "clusters".  Kustomize of apps above
+  - manifests: Individual k8s "applications.  Should be "kustomize" applicable applicatons.  Helm charts should be exploded with "helm template", but with a Makefile that can be used to regenerate if necessary
+  - clusters: Example "clusters".  Kustomize of apps above
 - scripts: Collection of random scripts 
 
 ## Tools
@@ -36,4 +35,4 @@ Always good to have an example "app" to practice deployments and debugging.
 
 - [Java Based: Java Shopping](https://github.com/danielbryantuk/oreilly-docker-java-shopping)
 - [Python/Java Based: Bank of Anthos](https://github.com/GoogleCloudPlatform/bank-of-anthos) - also against a PostgreSQL database.  Primarily REST based called between services.
-- [Polygot: Online Boutique](https://github.com/GoogleCloudPlatform/microservices-demo) - True Polygot Application, with Microservices written in Python, Go, C#, Java and Node.  Primarily gRPC calls between services.
+- [Polygot: Online Boutique](https://github.com/ssmiller25/cloudnativeapp) - True Polygot Application, with Microservices written in Python, Go, C#, Java and Node.  Primarily gRPC calls between services.  My hard fork of [Google's MicroService Demo](https://github.com/GoogleCloudPlatform/microservices-demo)
